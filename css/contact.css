@@ -1,0 +1,104 @@
+/* Styles for Contact Page */
+.contact-page .page-title-section {
+    background: linear-gradient(135deg, #B76E79, #D2B48C); /* Rose to Tan/Light Gold */
+    color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+    animation: fadeInScaleUp 1s ease-out; /* Uses global keyframe */
+}
+
+.contact-page .page-title-section h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3em;
+    margin: 0 0 10px 0;
+}
+
+.contact-page .page-title-section .subtitle {
+    font-size: 1.2em;
+}
+
+.contact-content-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 30px; /* Space between form and details sections */
+    max-width: 1100px; /* Max width for the two-column layout */
+    margin: 30px auto; /* Centering */
+    padding: 0 15px; /* Padding for smaller screens */
+    animation: fadeInUp 0.8s ease-out 0.2s forwards; /* Uses global keyframe */
+    opacity: 0;
+}
+
+.contact-form-section, .contact-details-section {
+    flex: 1; /* Each takes up half the space */
+    min-width: 300px; /* Minimum width before stacking */
+    /* Uses .content-section base from global.css for padding, shadow, etc. */
+}
+
+.contact-form-section h3, .contact-details-section h3 {
+    margin-bottom: 25px; /* Consistent with other section titles */
+    font-size: 1.8em; /* Consistent with other section titles */
+}
+
+/* Contact Form Specifics (inherits .form-group from admin.css or auth.css if linked) */
+.contact-form-section .form-actions {
+    text-align: left; /* Align button to the left for contact form */
+}
+.contact-form-section .form-actions .btn-primary {
+    width: auto; /* Don't make button full width here */
+}
+
+/* Contact Details Specifics */
+.contact-details-section p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+    color: #5D5D5D;
+}
+.contact-details-section strong {
+    color: #B76E79; /* Darker Rose */
+    font-size: 1.1em;
+}
+.contact-details-section .contact-icon {
+    color: #CFB53B; /* Gold */
+    margin-right: 8px;
+    font-size: 1.1em;
+}
+.contact-details-section a {
+    color: #B76E79; /* Darker Rose for links */
+    text-decoration: underline;
+}
+.contact-details-section a:hover {
+    color: #CFB53B; /* Gold */
+}
+
+.contact-details-section h4 {
+    font-family: 'Playfair Display', serif;
+    color: #B76E79;
+    font-size: 1.3em;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #F7CAC9; /* Light rose separator */
+    padding-bottom: 5px;
+}
+
+.map-placeholder {
+    margin-top: 25px;
+    text-align: center;
+}
+.map-placeholder p {
+    font-style: italic;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+/* Responsive adjustments for Contact Page */
+@media (max-width: 768px) {
+    .contact-content-wrapper {
+        flex-direction: column; /* Stack form and details */
+    }
+    .contact-form-section, .contact-details-section {
+        margin-bottom: 30px; /* Add space when stacked */
+    }
+    .contact-form-section:last-child, .contact-details-section:last-child {
+        margin-bottom: 0;
+    }
+}

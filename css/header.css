@@ -1,0 +1,192 @@
+/* Header Styles */
+.site-header {
+    background-color: #B76E79; /* Darker Rose */
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    animation: fadeInDown 1s ease-out; /* Uses global keyframe */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.header-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-area .logo-link {
+    text-decoration: none;
+}
+
+.logo-main {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2em;
+    color: #fff;
+    display: block;
+    line-height: 1;
+}
+
+.logo-tagline {
+    font-size: 0.8em;
+    color: #F7CAC9; /* Lighter Rose */
+    display: block;
+    margin-top: 2px;
+    font-weight: 300;
+}
+
+.main-navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.main-navigation .nav-link {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 18px;
+    margin: 0 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    font-weight: 500;
+    display: inline-block; /* For transform */
+}
+
+.main-navigation .nav-link:hover,
+.main-navigation .nav-link.active {
+    background-color: #CFB53B; /* Gold */
+    color: #B76E79; /* Dark Rose text on Gold bg */
+    animation: navLinkHover 0.5s ease-out; /* Uses global keyframe */
+}
+
+.main-navigation .contact-link {
+    background-color: #CFB53B; /* Gold */
+    color: #B76E79; /* Dark Rose text */
+}
+
+.main-navigation .contact-link:hover {
+    background-color: #E0C45F; /* Lighter Gold on hover */
+    color: #fff;
+}
+
+/* Responsive considerations for header */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .logo-area {
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    .main-navigation ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    .main-navigation .nav-link {
+        padding: 8px 15px;
+        margin: 5px 0; /* Stack vertically */
+        display: block; /* Full width for easier tapping */
+        text-align: center;
+    }
+    /* Adjust global .content-area margin-top if header height changes significantly */
+    /* This is a common place to put such an override if global.css doesn't handle it dynamically */
+    .content-area { /* Overriding global.css margin-top for mobile specifically due to header */
+        margin-top: 150px !important; /* Use !important carefully, or ensure this rule has higher specificity */
+    }
+}
+
+/* Dropdown Menu Styles */
+.nav-item-dropdown {
+    position: relative; /* For positioning the dropdown menu */
+    display: inline-block; /* Or list-item if it's directly an li */
+}
+
+.dropdown-toggle {
+    cursor: default; /* If it's not a link itself, but a toggle */
+}
+.dropdown-toggle:hover { /* Prevent hover style if it's just a toggle text */
+    /* background-color: transparent !important; */ /* Example to override general nav-link hover */
+}
+
+
+.dropdown-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%; /* Position below the parent */
+    left: 0;
+    background-color: #B76E79; /* Darker Rose, same as header */
+    border: 1px solid #A35D6A; /* Slightly darker border */
+    border-top: none; /* No top border as it connects to parent */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 200px; /* Minimum width for dropdown */
+    z-index: 1001; /* Above other header content */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    border-radius: 0 0 5px 5px; /* Rounded bottom corners */
+    opacity: 0; /* Hidden for animation */
+    visibility: hidden; /* Hidden for animation and accessibility */
+    transform: translateY(-10px); /* Start slightly above for slide-down effect */
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+/* .nav-item-dropdown:hover .dropdown-menu { */ /* Remove hover-based display */
+    /* display: block; */ 
+/* } */
+
+.dropdown-menu.open { /* Show when .open class is added by JS */
+    display: block; /* Or flex, grid etc. if needed for layout */
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+
+.dropdown-menu li {
+    /* No specific styling needed for li itself unless for borders between items */
+}
+
+.dropdown-menu .dropdown-item {
+    display: block;
+    padding: 10px 15px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400; /* Slightly less weight than main nav links */
+    font-size: 0.95em;
+    white-space: nowrap; /* Prevent wrapping */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item.active {
+    background-color: #CFB53B; /* Gold */
+    color: #B76E79; /* Dark Rose text */
+}
+
+.welcome-user { /* Specific styling for the welcome message if needed */
+    /* cursor: default; */ /* Already on dropdown-toggle */
+}
+.welcome-user:hover {
+     /* background-color: transparent !important; */ /* Prevent hover if it's not a link */
+}
+
+/* Adjust dropdown position on mobile if needed */
+@media (max-width: 768px) {
+    .nav-item-dropdown {
+        /* On mobile, dropdown might need to behave differently if nav stacks */
+        /* For now, it will stack with other items. */
+    }
+    .dropdown-menu {
+        /* If nav items are centered on mobile, dropdown might need to be centered too */
+        left: 50%;
+        transform: translateX(-50%);
+        /* Or make it full width */
+        /* width: 100%; */
+    }
+}

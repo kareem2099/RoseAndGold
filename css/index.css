@@ -1,0 +1,187 @@
+/* Styles for Homepage (index.php) */
+
+.homepage .content-area {
+    margin-top: 0; /* Homepage hero might be directly under sticky header, or header might not be sticky on homepage */
+    padding-top: 0; /* Remove default content-area padding if hero is full-width */
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #F7CAC9, #CFB53B); /* Rose to Gold gradient */
+    color: #fff;
+    padding: 80px 20px;
+    text-align: center;
+    display: flex; /* For layout of content and image placeholder */
+    align-items: center;
+    justify-content: space-around; /* Or center if image is below/above */
+    flex-wrap: wrap; /* Allow wrapping */
+    min-height: 70vh; /* Make hero section take significant viewport height */
+    animation: fadeInScaleUp 1.2s ease-out; /* Uses global keyframe */
+}
+
+.hero-content {
+    max-width: 600px;
+    animation: slideInFromLeft 1s ease-out 0.3s forwards; /* Uses global keyframe */
+    opacity: 0;
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.8em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    font-weight: 700;
+}
+
+.hero-content .subtitle {
+    font-size: 1.4em;
+    margin-bottom: 30px;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+.hero-cta { /* Uses .btn-primary base */
+    padding: 15px 35px;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hero-image-placeholder {
+    width: 300px; /* Adjust as needed */
+    height: 300px;
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 50%; /* Circular placeholder */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+    color: #B76E79; /* Darker Rose */
+    border: 5px solid #fff;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    animation: slideInFromRight 1s ease-out 0.3s forwards; /* Uses global keyframe */
+    opacity: 0;
+    margin: 20px;
+}
+.hero-image-placeholder span {
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+
+/* Section Title Styling (General for homepage sections) */
+.homepage .section-title {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    color: #B76E79; /* Darker Rose */
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+    position: relative;
+}
+.homepage .section-title::after { /* Decorative underline */
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: #CFB53B; /* Gold */
+    margin: 10px auto 0;
+}
+
+/* Featured Products Section */
+.featured-products-section {
+    padding: 60px 20px;
+    background-color: #FFF8F7; /* Very light rose, slightly different from body */
+    animation: fadeInUp 1s ease-out 0.2s forwards; /* Uses global keyframe */
+    opacity: 0;
+}
+
+.homepage-product-grid { /* Uses .product-grid base from products.css */
+    /* Any homepage specific overrides for the grid */
+    gap: 25px; /* Slightly different gap for homepage */
+}
+
+.homepage-product-card { /* Uses .product-card base from products.css */
+    /* Any homepage specific overrides for product cards */
+    box-shadow: 0 3px 10px rgba(183, 110, 121, 0.08);
+}
+.homepage-product-card .product-image-placeholder img {
+    width: 100%;
+    height: 200px; /* Slightly smaller images for homepage features */
+    object-fit: cover;
+}
+.homepage-product-card .btn-view-product { /* Uses .btn-secondary base */
+    display: block;
+    width: calc(100% - 40px); /* Full width minus padding */
+    margin: 15px auto 0;
+    text-align: center;
+}
+
+
+/* About Us Snippet Section */
+.about-snippet-section { /* Uses .content-section base from global.css */
+    padding: 60px 20px; /* Override default padding if needed */
+    text-align: center; /* Center text for snippet */
+    animation-delay: 0.4s !important; /* Override global .content-section animation delay */
+}
+.about-snippet-section p {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+    color: #5D5D5D;
+}
+
+/* CTA Contact Section */
+.cta-contact-section {
+    background-color: #B76E79; /* Darker Rose background */
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+    animation: fadeInUp 1s ease-out 0.6s forwards; /* Uses global keyframe */
+    opacity: 0;
+}
+.cta-contact-section .section-title {
+    color: #fff;
+}
+.cta-contact-section .section-title::after {
+    background-color: #CFB53B; /* Gold */
+}
+.cta-contact-section p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+.cta-contact-section .btn-secondary { /* Override for this section */
+    background-color: #CFB53B;
+    color: #B76E79;
+    border-color: #CFB53B;
+}
+.cta-contact-section .btn-secondary:hover {
+    background-color: #E0C45F;
+    color: #fff;
+}
+
+.section-cta {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Responsive adjustments for Homepage */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.8em;
+    }
+    .hero-content .subtitle {
+        font-size: 1.2em;
+    }
+    .hero-image-placeholder {
+        width: 200px;
+        height: 200px;
+        margin-top: 30px;
+    }
+    .homepage .section-title {
+        font-size: 2em;
+    }
+}

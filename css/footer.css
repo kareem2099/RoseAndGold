@@ -1,0 +1,105 @@
+/* Footer Styles */
+.animated-footer { /* This class is used on the footer HTML element */
+    animation: fadeInUp 1s ease-out 0.2s; /* Uses global keyframe */
+    animation-fill-mode: backwards;
+    position: relative;
+    margin-top: 60px;
+    padding: 40px 0 0;
+    background-color: #B76E79; /* Darker Rose for footer background */
+    color: #FFF8F7; /* Lighter Rose text for contrast */
+}
+
+.footer-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-bottom: 30px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 250px;
+    margin: 0 15px 30px;
+}
+
+.footer-column h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5em;
+    color: #CFB53B; /* Gold for titles */
+    margin-bottom: 20px;
+    border-bottom: 1px solid #CFB53B;
+    padding-bottom: 10px;
+    font-weight: 700;
+}
+
+.footer-column p, .footer-column li {
+    font-size: 0.95em;
+    margin-bottom: 10px;
+    color: #F7CAC9; /* Lighter Rose for text */
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column a {
+    color: #FFF8F7; /* Lighter Rose / White for links */
+    text-decoration: none;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.footer-column a:hover {
+    color: #CFB53B; /* Gold on hover */
+    padding-left: 5px;
+}
+
+.social-media-links .social-icon {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 1.2em;
+    padding: 5px;
+    border: 1px solid #CFB53B;
+    border-radius: 5px;
+    color: #CFB53B;
+}
+
+.social-media-links .social-icon:hover {
+    background-color: #CFB53B;
+    color: #B76E79; /* Dark Rose icon on Gold bg */
+    padding-left: 5px; /* Keep consistent with other link hovers */
+}
+
+.footer-bottom {
+    background-color: #A35D6A; /* Slightly darker rose than main footer bg */
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px; /* Space above the bottom bar if columns wrap and push content down */
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #F7CAC9;
+}
+
+/* Responsive considerations for footer */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-column {
+        margin: 20px 0;
+        text-align: center;
+    }
+    .footer-column ul {
+        text-align: center;
+    }
+    .social-media-links {
+        text-align: center;
+    }
+}

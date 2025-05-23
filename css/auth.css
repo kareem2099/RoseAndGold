@@ -1,0 +1,150 @@
+/* Styles for Authentication Pages (Login & Register) */
+
+.auth-page .page-title-section {
+    background: linear-gradient(135deg, #e0c45f, #b76e79); /* Gold to Rose gradient */
+    color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+    animation: fadeInScaleUp 1s ease-out; /* Uses global keyframe */
+}
+
+.auth-page .page-title-section h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3em;
+    margin: 0 0 10px 0;
+}
+
+.auth-page .page-title-section .subtitle {
+    font-size: 1.2em;
+}
+
+.auth-form-section { /* Uses .content-section base from global.css */
+    max-width: 500px; /* Narrower form for auth pages */
+    margin-top: 30px; /* Spacing from title */
+    margin-bottom: 30px; /* Spacing before footer */
+    animation: fadeInUp 0.8s ease-out 0.2s forwards; /* Uses global keyframe */
+    opacity: 0;
+}
+
+.auth-form-section .form-group label {
+    color: #B76E79; /* Darker Rose for labels, consistent with admin.css */
+}
+
+.auth-form-section .form-group input[type="text"],
+.auth-form-section .form-group input[type="email"],
+.auth-form-section .form-group input[type="password"] {
+    /* Uses general form input styling from admin.css if linked, or define here */
+    width: 100%;
+    padding: 12px 15px; /* Slightly larger padding for auth forms */
+    border: 1px solid #F7CAC9; /* Rose border */
+    border-radius: 5px; /* Softer radius */
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    color: #5D5D5D;
+    margin-bottom: 5px; /* Space below input before potential error messages (not implemented yet) */
+}
+
+.auth-form-section .form-group input[type="text"]:focus,
+.auth-form-section .form-group input[type="email"]:focus,
+.auth-form-section .form-group input[type="password"]:focus {
+    outline: none;
+    border-color: #CFB53B; /* Gold focus */
+    box-shadow: 0 0 0 3px rgba(207, 181, 59, 0.3); /* Softer Gold glow */
+}
+
+.auth-form-section .form-actions {
+    margin-top: 25px;
+    text-align: center; /* Center button */
+}
+
+.auth-form-section .form-actions .btn-primary {
+    width: 100%; /* Full width button */
+    padding: 12px 20px;
+    font-size: 1.1em;
+    /* Uses .btn-primary styles from cart.css or admin.css if linked and general enough */
+}
+
+.auth-switch {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 0.95em;
+    color: #5D5D5D;
+}
+
+.auth-switch a {
+    color: #B76E79; /* Darker Rose */
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.auth-switch a:hover {
+    color: #CFB53B; /* Gold */
+}
+
+/* Ensure messages are styled (re-using from admin.css if linked, or define here) */
+.auth-page .message {
+    max-width: 500px; /* Match form width */
+}
+
+/* Password Toggle and Strength Meter Styles */
+.form-group {
+    position: relative; 
+}
+
+.password-toggle-icon { /* Updated class name */
+    position: absolute;
+    right: 15px;
+    top: 38px; /* Adjusted for typical input height when label is on top */
+    /* If label is inline or input padding changes, this might need fine-tuning */
+    /* A more robust way is to calculate based on input's actual position/height with JS,
+       or use flexbox on the parent if the label and input are side-by-side.
+       For now, this is an estimate. */
+    cursor: pointer;
+    color: #B76E79; /* Darker Rose */
+    font-size: 1.2em; /* Make icon a bit larger */
+    user-select: none;
+    line-height: 1; /* Ensure icon aligns well */
+    padding: 5px; /* Make it easier to click */
+}
+.password-toggle-icon:hover {
+    color: #CFB53B; /* Gold */
+}
+.password-toggle-icon.visible {
+    /* When password is visible, change icon appearance */
+    /* For example, change color or opacity if not swapping icon */
+    color: #CFB53B; /* Gold to indicate it's active / password shown */
+    /* Or, if you had a slashed eye icon, you'd change the content here or in JS */
+}
+
+.password-strength-meter {
+    height: 10px; /* Or use padding for height */
+    margin-top: 8px;
+    margin-bottom: 5px; /* Space before next element */
+    border-radius: 5px;
+    background-color: #eee; /* Default background */
+    font-size: 0.85em;
+    line-height: 10px; /* Match height for text if any */
+    text-align: center;
+    color: white;
+    transition: background-color 0.3s ease, width 0.3s ease; /* For potential bar effect */
+}
+
+.password-strength-meter.weak {
+    background-color: #f44336; /* Red */
+    /* width: 33%; */ /* Example if using a bar that fills */
+}
+.password-strength-meter.medium {
+    background-color: #ff9800; /* Orange */
+    /* width: 66%; */
+}
+.password-strength-meter.strong {
+    background-color: #4caf50; /* Green */
+    /* width: 100%; */
+}
+/* If just text, adjust padding/height for text visibility */
+.password-strength-meter:not(:empty) { /* Add padding only when there's text */
+    padding: 5px 0;
+    height: auto; /* Adjust height for text */
+    line-height: normal;
+}

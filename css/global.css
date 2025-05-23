@@ -1,0 +1,147 @@
+body {
+    font-family: 'Roboto', sans-serif; /* Updated font */
+    margin: 0;
+    background-color: #FFF8F7; /* Lighter Rose for background */
+    color: #5D5D5D; /* Softer dark gray */
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+/* General Animations (can be used by any component) */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Keyframes used by specific components but defined globally for potential re-use */
+@keyframes navLinkHover { /* Used by header.css */
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes slideInFromLeft { /* Used by about.css */
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight { /* Used by about.css */
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInScaleUp { /* Used by about.css */
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* General Content Area Styling */
+.content-area {
+    padding: 30px 20px;
+    text-align: center;
+    animation: fadeIn 1.2s ease-in 0.3s;
+    animation-fill-mode: backwards;
+    /* margin-top needs to be handled carefully if header is sticky.
+       It's currently 80px, assuming a fixed header height.
+       This might be better placed in page-specific CSS or adjusted if header height varies.
+       For now, keeping it here as a general rule for main content areas. */
+    margin-top: 80px;
+}
+
+.content-section { /* General styling for sections within content-area */
+    background-color: #ffffff;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    max-width: 850px;
+    text-align: left;
+    /* Default animation for content sections, can be overridden by page-specific CSS */
+    animation: fadeInUp 1s ease-out 0.5s;
+    animation-fill-mode: backwards;
+}
+
+.content-section h3 { /* General h3 styling within content sections */
+    font-family: 'Playfair Display', serif;
+    color: #B76E79;
+    border-bottom: 2px solid #CFB53B;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+.image-placeholder {
+    background-color: #FDF0F0;
+    border: 2px dashed #E0C45F;
+    padding: 60px;
+    text-align: center;
+    color: #B76E79;
+    margin: 25px 0;
+    border-radius: 8px;
+    font-style: italic;
+}
+.image-placeholder::after { /* If used for team member, this is a duplicate. Assuming general placeholder here. */
+    content: "Image Placeholder";
+}
+
+
+/* General link styling if not overridden by more specific selectors */
+a {
+    color: #B76E79;
+    text-decoration: none;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+a:hover {
+    color: #CFB53B;
+}
+
+/* Base responsive adjustments for general layout */
+@media (max-width: 768px) {
+    .content-area {
+        /* margin-top might need adjustment if header height changes significantly on mobile */
+        /* For example, if header stacks and becomes taller: */
+        /* margin-top: 150px; */ /* This was in the original combined file */
+    }
+}

@@ -1,0 +1,156 @@
+/* Styles for Admin Pages */
+.admin-page .page-title-section {
+    background: linear-gradient(135deg, #5D5D5D, #4A4A4A); /* Darker, more neutral gradient for admin */
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    animation: fadeInScaleUp 1s ease-out; /* Uses global keyframe */
+}
+
+.admin-page .page-title-section h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8em;
+    margin: 0 0 8px 0;
+}
+
+.admin-page .page-title-section .subtitle {
+    font-size: 1.1em;
+    font-weight: 300;
+}
+
+/* Messages Styling */
+.message {
+    padding: 15px;
+    margin: 20px auto;
+    border-radius: 5px;
+    max-width: 850px; /* Consistent with .content-section */
+    text-align: center;
+    font-weight: 500;
+    animation: fadeIn 0.5s ease-out; /* Uses global keyframe */
+}
+.message.success {
+    background-color: #d4edda; /* Light green */
+    color: #155724; /* Dark green */
+    border: 1px solid #c3e6cb;
+}
+.message.error {
+    background-color: #f8d7da; /* Light red */
+    color: #721c24; /* Dark red */
+    border: 1px solid #f5c6cb;
+}
+
+/* Form Styling */
+.add-product-form-section { /* Uses .content-section base from global.css */
+    /* Additional specific styling if needed */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #B76E79; /* Darker Rose for labels */
+}
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #F7CAC9; /* Rose border */
+    border-radius: 4px;
+    box-sizing: border-box; /* Important for 100% width + padding */
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    color: #5D5D5D;
+}
+.form-group input[type="text"]:focus,
+.form-group input[type="number"]:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #CFB53B; /* Gold focus */
+    box-shadow: 0 0 0 2px rgba(207, 181, 59, 0.25); /* Gold glow */
+}
+.form-group textarea {
+    resize: vertical; /* Allow vertical resize */
+    min-height: 80px;
+}
+
+.form-actions {
+    margin-top: 25px;
+    text-align: right;
+}
+.form-actions .btn-primary,
+.form-actions .btn-secondary { /* Using existing button classes from cart.css, ensure they are general enough or redefine */
+    margin-left: 10px;
+}
+
+
+/* Admin Table Styling */
+.admin-table-container {
+    overflow-x: auto; /* For responsiveness on small screens */
+}
+.admin-page table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 0.95em;
+}
+.admin-page th, .admin-page td {
+    border: 1px solid #F7CAC9; /* Rose border */
+    padding: 10px 12px;
+    text-align: left;
+    vertical-align: middle;
+}
+.admin-page thead {
+    background-color: #FFF8F7; /* Light Rose */
+}
+.admin-page th {
+    font-weight: 700;
+    color: #B76E79; /* Darker Rose */
+}
+.admin-page tbody tr:nth-child(even) {
+    background-color: #fdfbfb; /* Very light alternate row color */
+}
+.admin-page tbody tr:hover {
+    background-color: #FFF8F7; /* Light Rose on hover */
+}
+
+.btn-edit, .btn-delete {
+    padding: 6px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9em;
+    margin-right: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+.btn-edit {
+    background-color: #CFB53B; /* Gold */
+    color: #B76E79; /* Dark Rose text */
+    border: 1px solid #CFB53B;
+}
+.btn-edit:hover {
+    background-color: #E0C45F; /* Lighter Gold */
+    color: #fff;
+}
+.btn-delete {
+    background-color: #dc3545; /* Red for delete */
+    color: white;
+    border: 1px solid #dc3545;
+}
+.btn-delete:hover {
+    background-color: #c82333; /* Darker red */
+    border-color: #bd2130;
+}
+
+/* Ensure admin page specific animations are applied if .animated-section is used */
+.admin-page .animated-section {
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+.admin-page .page-title-section.animated-section { animation-name: fadeInScaleUp; animation-duration: 1s; }
+.admin-page .add-product-form-section.animated-section { animation-name: slideInFromLeft; animation-duration: 0.8s; animation-delay: 0.2s; }
+.admin-page .product-list-section.animated-section { animation-name: fadeInUp; animation-duration: 0.8s; animation-delay: 0.4s; }
+.admin-page .message.animated-section { animation-name: fadeIn; animation-duration: 0.5s; }

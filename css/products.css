@@ -1,0 +1,149 @@
+/* Styles for Products Page */
+.products-page .page-title-section {
+    background: linear-gradient(135deg, #CFB53B, #B76E79); /* Gold to Rose gradient */
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+    animation: fadeInScaleUp 1.2s ease-out; /* Uses global keyframe */
+}
+
+.products-page .page-title-section h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5em;
+    margin: 0 0 10px 0;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.products-page .page-title-section .subtitle {
+    font-size: 1.3em;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+.products-page .product-intro,
+.products-page .product-outro {
+    text-align: center;
+    max-width: 700px; /* More focused intro/outro text */
+}
+
+/* Product Grid Styling */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 30px;
+    padding: 20px 0; /* Padding around the grid */
+    max-width: 1200px; /* Max width for the grid container */
+    margin: 30px auto; /* Centering the grid */
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(183, 110, 121, 0.1); /* Softer rose shadow */
+    overflow: hidden; /* To contain image placeholder and ensure rounded corners are respected */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 0.5s ease-out forwards; /* Uses global keyframe, 'forwards' to keep state */
+    opacity: 0; /* Start hidden for animation */
+}
+
+/* Staggered animation for product cards */
+.product-grid .product-card:nth-child(1) { animation-delay: 0.2s; }
+.product-grid .product-card:nth-child(2) { animation-delay: 0.3s; }
+.product-grid .product-card:nth-child(3) { animation-delay: 0.4s; }
+.product-grid .product-card:nth-child(4) { animation-delay: 0.5s; }
+/* Add more if needed */
+
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(183, 110, 121, 0.2);
+}
+
+.product-image-placeholder {
+    height: 220px;
+    background-color: #FDF0F0; /* Light rose */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #B76E79; /* Darker Rose */
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5em;
+    font-style: italic;
+    text-align: center;
+    padding: 10px;
+    border-bottom: 3px solid #E0C45F; /* Gold accent line */
+}
+
+.product-info {
+    padding: 20px;
+    text-align: center; /* Center text within the info section */
+    flex-grow: 1; /* Allows info to take remaining space if cards have varying content height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes button to bottom */
+}
+
+.product-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6em;
+    color: #B76E79; /* Darker Rose */
+    margin: 0 0 10px 0;
+}
+
+.product-category {
+    font-size: 0.85em;
+    color: #CFB53B; /* Gold */
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.product-description {
+    font-size: 0.95em;
+    color: #5D5D5D; /* Softer dark gray */
+    margin-bottom: 15px;
+    flex-grow: 1; /* Allows description to take available space */
+}
+
+.product-price {
+    font-size: 1.4em;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.btn-add-to-cart {
+    background-color: #B76E79; /* Darker Rose */
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1em;
+    font-weight: 500;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-add-to-cart:hover {
+    background-color: #CFB53B; /* Gold */
+    color: #B76E79; /* Darker Rose text */
+    transform: scale(1.05);
+}
+
+/* Responsive adjustments for Products Page */
+@media (max-width: 576px) {
+    .products-page .page-title-section h1 {
+        font-size: 2.5em;
+    }
+    .products-page .page-title-section .subtitle {
+        font-size: 1.1em;
+    }
+    .product-grid {
+        grid-template-columns: 1fr; /* Single column on very small screens */
+    }
+}
